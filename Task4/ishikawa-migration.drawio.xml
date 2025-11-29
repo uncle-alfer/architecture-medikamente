@@ -1,0 +1,46 @@
+﻿<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.1">
+  <diagram id="IshikawaMigrationDiagram" name="Диаграмма Исикавы - миграция монолита">
+    <mxGraphModel dx="2505" dy="874" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="head" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;" value="Риск снижения производительности и надёжности системы при миграции монолита «Медикаменте» на микросервисную архитектуру" vertex="1">
+          <mxGeometry height="80" width="340" x="-220" y="252" as="geometry" />
+        </mxCell>
+        <mxCell id="spine" parent="1" style="rounded=0;html=1;strokeWidth=2;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="4" width="1180" x="120" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="link_infra" parent="1" style="rounded=0;html=1;strokeWidth=1.5;strokeColor=#000000;rotation=-25;" value="" vertex="1">
+          <mxGeometry height="2" width="160" x="190" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="link_software" parent="1" style="rounded=0;html=1;strokeWidth=1.5;strokeColor=#000000;rotation=-20;" value="" vertex="1">
+          <mxGeometry height="2" width="210" x="540" y="258" as="geometry" />
+        </mxCell>
+        <mxCell id="link_integration" parent="1" style="rounded=0;html=1;strokeWidth=1.5;strokeColor=#000000;rotation=25;" value="" vertex="1">
+          <mxGeometry height="2" width="160" x="190" y="332" as="geometry" />
+        </mxCell>
+        <mxCell id="link_processes" parent="1" style="rounded=0;html=1;strokeWidth=1.5;strokeColor=#000000;rotation=20;" value="" vertex="1">
+          <mxGeometry height="2" width="160" x="540" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="cat_infra" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;strokeColor=#000000;fillColor=#FFFFFF;" value="&lt;b&gt;Инфраструктура&lt;/b&gt;&lt;br/&gt;- Неподходящие ресурсы под рост нагрузки&lt;br/&gt;- Нет изоляции ресурсов (шумные соседи)&lt;br/&gt;- Ошибки конфигурации контейнеров и оркестратора&lt;br/&gt;- Узкие места сети между филиалами&lt;br/&gt;- Нет отказоустойчивости критичных компонентов" vertex="1">
+          <mxGeometry height="110" width="260" x="210" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="cat_software" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;strokeColor=#000000;fillColor=#FFFFFF;" value="&lt;b&gt;Программное обеспечение&lt;/b&gt;&lt;br/&gt;- Общая монолитная БД для всех сервисов&lt;br/&gt;- Чрезмерно связанная архитектура (длинные цепочки вызовов)&lt;br/&gt;- Неоптимальные SQL-запросы и алгоритмы&lt;br/&gt;- Недостаточная наблюдаемость (логи, метрики, трейсы)" vertex="1">
+          <mxGeometry height="110" width="280" x="600" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="cat_integration" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;strokeColor=#000000;fillColor=#FFFFFF;" value="&lt;b&gt;Интеграция и данные&lt;/b&gt;&lt;br/&gt;- Сложная синхронизация старой и новой систем&lt;br/&gt;- Несогласованные схемы и форматы данных&lt;br/&gt;- Централизованный интеграционный «монолит»&lt;br/&gt;- Нет единого источника правды (конфликтующие обновления)&lt;br/&gt;- Нет контрактного тестирования API" vertex="1">
+          <mxGeometry height="120" width="300" x="190" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="cat_processes" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;strokeColor=#000000;fillColor=#FFFFFF;" value="&lt;b&gt;Процессы&lt;/b&gt;&lt;br/&gt;- Редкие крупные релизы, высокий time-to-market&lt;br/&gt;- Долгое Lead Time из-за ручных шагов&lt;br/&gt;- Нет регулярного нагрузочного тестирования&lt;br/&gt;- Нет формализованного плана миграции и отката" vertex="1">
+          <mxGeometry height="110" width="280" x="570" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="cat_people" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;strokeColor=#000000;fillColor=#FFFFFF;" value="&lt;b&gt;Персонал и организация&lt;/b&gt;&lt;br/&gt;- Недостаточный опыт работы с микросервисами и облачной инфраструктурой&lt;br/&gt;- Команды разделены по слоям, а не по доменам (закон Конвея)&lt;br/&gt;- Неочевидные приоритеты миграции&lt;br/&gt;- Недостаточное обучение эксплуатации и поддержки" vertex="1">
+          <mxGeometry height="110" width="280" x="980" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="link_people" parent="1" style="rounded=0;html=1;strokeWidth=1.5;strokeColor=#000000;rotation=-20;" value="" vertex="1">
+          <mxGeometry height="2" width="210" x="929.9997453258461" y="256.0018076699811" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
